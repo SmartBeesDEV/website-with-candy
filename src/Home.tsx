@@ -70,11 +70,10 @@ const ConnectButton = styled(WalletMultiButton)`
 `;
 
 const NFT = styled(Paper)`
-  min-width: 500px;
-  max-width: 79%;
+  max-width: 90%;
   padding: 5px 20px 20px 20px;
   flex: 1 1 auto;
-  background-image: url('mint-background.gif') !important;
+  // background-image: url('mint-background.gif') !important;
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
@@ -178,7 +177,7 @@ const Price = styled(Chip)`
 `;
 
 const Image = styled.img`
-  height: 400px;
+  max-height: 300px;
   width: auto;
   border-radius: 7px;
   box-shadow: 5px 5px 40px 5px rgba(0,0,0,0.5);
