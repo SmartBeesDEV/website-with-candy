@@ -77,11 +77,6 @@ const NFT = styled(Paper)`
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
 `;
 
-const Des = styled(NFT)`
-  text-align: left;
-  padding-top: 0px;
-`;
-
 
 const Card = styled(Paper)`
   display: inline-block;
@@ -223,7 +218,7 @@ const BorderLinearProgress = styled(LinearProgress)`
   border: 2px solid white;
   box-shadow: 5px 5px 40px 5px rgba(0,0,0,0.5);
   background-color:var(--main-text-color) !important;
-  
+
   > div.MuiLinearProgress-barColorPrimary{
     background-color:var(--title-text-color) !important;
   }
@@ -231,35 +226,6 @@ const BorderLinearProgress = styled(LinearProgress)`
   > div.MuiLinearProgress-bar1Determinate {
     border-radius: 30px !important;
     background-image: linear-gradient(270deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.5));
-  }
-`;
-
-const ShimmerTitle = styled.h1`
-  margin: 20px auto;
-  text-transform: uppercase;
-  animation: glow 2s ease-in-out infinite alternate;
-  color: var(--main-text-color);
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 20px var(--main-text-color);
-    }
-    to {
-      text-shadow: 0 0 30px var(--title-text-color), 0 0 10px var(--title-text-color);
-    }
-  }
-`;
-
-const GoldTitle = styled.h2`
-  color: var(--title-text-color);
-`;
-
-const LogoAligner = styled.div`
-  display: flex;
-  align-items: center;
-
-  img {
-    max-height: 35px;
-    margin-right: 10px;
   }
 `;
 
@@ -565,16 +531,15 @@ const Home = (props: HomeProps) => {
                             <ConnectButton>Connect Wallet</ConnectButton>}
                     </Wallet>
                 </WalletContainer>
-                <ShimmerTitle>MINT IS LIVE !</ShimmerTitle>
                 <br/>
                 <MintContainer>
                     <DesContainer>
                         <NFT elevation={3}>
-                            <h2>My NFT</h2>
+                            <h2>SmartBees</h2>
                             <br/>
                             <div><Price
                                 label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
-                                src="cool-cats.gif"
+                                src="smart-bees.gif"
                                 alt="NFT To Mint"/></div>
                             <br/>
                             {wallet && isActive && whitelistEnabled && (whitelistTokenBalance > 0) && isBurnToken &&
@@ -592,7 +557,7 @@ const Home = (props: HomeProps) => {
                                 renderer={renderEndDateCounter}
                               />}
                             {wallet && isActive &&
-                              <h3>TOTAL MINTED : {itemsRedeemed} / {itemsAvailable}</h3>}
+                              <h3>Total minted : {itemsRedeemed} / {itemsAvailable}</h3>}
                             {wallet && isActive && <BorderLinearProgress variant="determinate"
                                                                          value={100 - (itemsRemaining * 100 / itemsAvailable)}/>}
                             <br/>
@@ -655,35 +620,6 @@ const Home = (props: HomeProps) => {
                             {wallet && isActive && solanaExplorerLink &&
                               <SolExplorerLink href={solanaExplorerLink} target="_blank">View on Solscan</SolExplorerLink>}
                         </NFT>
-                    </DesContainer>
-                    <DesContainer>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 1</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 2</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
-                        <Des elevation={2}>
-                            <LogoAligner><img src="logo.png" alt=""></img><GoldTitle>TITLE 3</GoldTitle></LogoAligner>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt.</p>
-                        </Des>
                     </DesContainer>
                 </MintContainer>
             </MainContainer>
